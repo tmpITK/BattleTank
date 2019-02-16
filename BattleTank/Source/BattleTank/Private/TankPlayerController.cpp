@@ -10,5 +10,6 @@ ATank* ATankPlayerController::GetControlledTank() const {
 
 void ATankPlayerController::BeginPlay(){
 	Super::BeginPlay();
-	ControllerHelper->LogPossession(*this);
+	auto ControlledTank = GetControlledTank();
+	ControllerHelper->LogPossession(*this, ControlledTank);
 }

@@ -14,12 +14,10 @@ public:
 	ControllerAux();
 	~ControllerAux();
 
-	template<typename T>
-	void LogPossession(const T &player)
+	template<typename T1, typename T2>
+	void LogPossession(const T1 &controller, const T2* ControlledTank)
 	{
-		auto name = player.GetName();
-		UE_LOG(LogTemp, Warning, TEXT("Controller %s begin play."), *name);
-		auto ControlledTank = player.GetControlledTank();
+		auto name = controller.GetName();
 		if (ControlledTank) {
 			UE_LOG(LogTemp, Warning, TEXT("Controller %s possessing %s."), *name, *ControlledTank->GetName());
 		}
@@ -27,4 +25,5 @@ public:
 			UE_LOG(LogTemp, Warning, TEXT("Controller %s does not possess anything."), *name);
 		}
 	}
+
 };

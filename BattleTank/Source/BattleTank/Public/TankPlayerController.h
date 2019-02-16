@@ -22,10 +22,9 @@ class BATTLETANK_API ATankPlayerController : public APlayerController
 
 	friend class ControllerAux;	
 public:
-	ATank* GetControlledTank() const;
-	
 	virtual void BeginPlay() override;
 	
 private:
 	std::unique_ptr<ControllerAux> ControllerHelper = std::make_unique<ControllerAux>();
+	ATank* GetControlledTank() const;
 };
