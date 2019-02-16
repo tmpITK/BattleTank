@@ -1,14 +1,13 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "TankPlayerController.h"
+#include "TankAIController.h"
 
-
-
-ATank* ATankPlayerController::GetControlledTank() const {
+ATank* ATankAIController::GetControlledTank() const{
 	return Cast<ATank>(GetPawn());
 }
 
-void ATankPlayerController::BeginPlay(){
+void ATankAIController::BeginPlay() 
+{
 	Super::BeginPlay();
 	ControllerHelper->LogPossession(*this);
 }
