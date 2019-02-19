@@ -27,4 +27,9 @@ public:
 private:
 	std::unique_ptr<ControllerAux> ControllerHelper = std::make_unique<ControllerAux>();
 	ATank* GetControlledTank() const;
+
+	virtual void Tick(float DeltaTime) override;
+
+	//Move the barrel towards the crosshair
+	void AimTowardsCrosshair();
 };
