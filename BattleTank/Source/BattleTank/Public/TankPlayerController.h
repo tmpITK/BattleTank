@@ -26,6 +26,10 @@ public:
 	
 private:
 	std::unique_ptr<ControllerAux> ControllerHelper = std::make_unique<ControllerAux>();
+
+	UPROPERTY(EditAnywhere)
+		float CrosshairXLocation = 0.5, CrosshairYLocation = 0.3333;
+
 	ATank* GetControlledTank() const;
 
 	virtual void Tick(float DeltaTime) override;
@@ -34,5 +38,6 @@ private:
 	void AimTowardsCrosshair();
 
 	// True if hit landscape
-	bool GetSightRayLocation(FVector& OutHitLocation);
+	bool GetSightRayLocation(FVector& OutHitLocation) const;
+
 };
