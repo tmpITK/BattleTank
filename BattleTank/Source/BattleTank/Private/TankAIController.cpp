@@ -20,12 +20,21 @@ ATank * ATankAIController::GetPlayerTank() const
 	return nullptr;
 }
 
+void ATankAIController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	if (auto PlayerTank = GetPlayerTank()) {
+		//TODO Move towards Player
+
+		//Aim towards Player
+		GetControlledTank()->AimAt(PlayerTank->GetActorLocation());
+	}
+}
+
 void ATankAIController::BeginPlay() 
 {
 	Super::BeginPlay();
 	auto ControlledTank = GetControlledTank();
 	ControllerHelper->LogPossession(*this, ControlledTank);
-
-	auto PlayerTank = GetPlayerTank();
 
 }
