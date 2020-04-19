@@ -6,12 +6,11 @@
 
 #include <memory>
 
-#include "Tank.h"
 #include "ControllerAux.h"
 #include "AIController.h"
 
 #include "TankAIController.generated.h"
-
+class ATank;
 /**
  * 
  */
