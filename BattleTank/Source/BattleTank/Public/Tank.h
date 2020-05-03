@@ -23,6 +23,11 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 		void Fire();
 
+	void AimAt(FVector HitLocation);
+
+	
+private:	
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
@@ -37,11 +42,13 @@ public:
 	UPROPERTY(EditAnywhere, Category = Setup)
 		TSubclassOf<AProjectile> ProjectileBlueprint;
 
+	UPROPERTY(EditAnywhere, Category = Setup)
+		float ReloadTimeInSeconds = 3;
+
+	double LastFireTime;
+
 	// for projecctile spawning
 	UTankBarrel* Barrel = nullptr;
-public:	
-
-	void AimAt(FVector HitLocation);
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
 		void SetBarrelReference(UTankBarrel* BarrelToSet);

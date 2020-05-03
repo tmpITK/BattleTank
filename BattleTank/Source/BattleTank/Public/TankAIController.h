@@ -20,14 +20,9 @@ class BATTLETANK_API ATankAIController : public AAIController
 	GENERATED_BODY()
 
 friend class ControllerAux;
-public:
-	
-	virtual void BeginPlay() override;
-	
+
 private:
 	std::unique_ptr<ControllerAux> ControllerHelper = std::make_unique<ControllerAux>();
-	ATank* GetControlledTank() const;
-	ATank* GetPlayerTank() const;
 
 	virtual void Tick(float DeltaTime) override;
 };
