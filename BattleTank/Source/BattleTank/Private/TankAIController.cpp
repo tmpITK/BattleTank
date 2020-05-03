@@ -12,7 +12,7 @@ ATank * ATankAIController::GetPlayerTank() const
 	auto PlayerTank = GetWorld()->GetFirstPlayerController()->GetPawn();
 	auto AI_Id = GetName();
 	if (PlayerTank) {
-		UE_LOG(LogTemp, Warning, TEXT("Player %s found by AI %s"), *PlayerTank->GetName(), *AI_Id);
+		//tUE_LOG(LogTemp, Warning, TEXT("Player %s found by AI %s"), *PlayerTank->GetName(), *AI_Id);
 		return Cast<ATank>(PlayerTank);
 	}
 	else {
