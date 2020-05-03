@@ -53,7 +53,7 @@ void ATank::Fire()
 {
 	bool isReloaded = (FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds;
 	UE_LOG(LogTemp, Warning, TEXT("FIREEEE."));
-
+	
 	if (Barrel && isReloaded) {
 
 
@@ -63,9 +63,10 @@ void ATank::Fire()
 			Barrel->GetSocketLocation(FName("Projectile")),
 			Barrel->GetSocketRotation(FName("Projectile"))
 			);
-
+		
 		projectile->LaunchProjectile(LaunchSpeed);
 		LastFireTime = FPlatformTime::Seconds();
 	}
+	
 }
 
