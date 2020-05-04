@@ -16,7 +16,7 @@ void ATankAIController::Tick(float DeltaTime)
 		//UE_LOG(LogTemp, Warning, TEXT("Player %s found by AI %s"), *PlayerTank->GetName(), *AI_Id);
 		//Aim towards Player
 		ControlledTank->AimAt(PlayerTank->GetActorLocation());
-		ControlledTank->Fire();
+		//ControlledTank->Fire();
 	}
 	else {
 		UE_LOG(LogTemp, Warning, TEXT("AI %s could not find player."), *AI_Id);
