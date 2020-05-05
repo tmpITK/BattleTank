@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Tank.h"
+#include "TankMovementComponent.h"
 #include "TankAimingComponent.h"
 #include "TankBarrel.h"
 #include "Projectile.h"
@@ -12,6 +13,7 @@ ATank::ATank()
 	PrimaryActorTick.bCanEverTick = false;
 
 	TankAimingComponent = CreateDefaultSubobject<UTankAimingComponent>(FName("Aiming Component"));
+	TankMovementComponent = CreateDefaultSubobject<UTankMovementComponent>(FName("Movement Component"));
 }
 
 void ATank::SetBarrelReference(UTankBarrel* BarrelToSet) {
@@ -21,11 +23,19 @@ void ATank::SetBarrelReference(UTankBarrel* BarrelToSet) {
 	}
 }
 
-void ATank::SetTurretReference(UTankTurret * TurretToSet)
+void ATank::SetTurretReference(UTankTurret* TurretToSet)
 {
 	if(TurretToSet)
 	{
 		TankAimingComponent->SetTurretReference(TurretToSet);
+	}
+}
+
+void ATank::SetTankMovementComponent(UTankMovementComponent* TankMovementComponentToSet)
+{
+	if (TankMovementComponentToSet)
+	{
+		TankMovementComponent = TankMovementComponentToSet;
 	}
 }
 
