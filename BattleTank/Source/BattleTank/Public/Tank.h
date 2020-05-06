@@ -33,8 +33,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Setup)
 		void SetTurretReference(UTankTurret* TurretToSet);
 
-	UFUNCTION(BlueprintCallable, Category = Setup)
-		void SetTankMovementComponent(UTankMovementComponent* TankMovementComponentToSet);
 
 protected:
 
