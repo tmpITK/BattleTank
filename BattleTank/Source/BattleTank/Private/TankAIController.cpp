@@ -14,6 +14,7 @@ void ATankAIController::Tick(float DeltaTime)
 	auto AI_Id = GetName();
 	if (PlayerTank) {
 		//UE_LOG(LogTemp, Warning, TEXT("Player %s found by AI %s"), *PlayerTank->GetName(), *AI_Id);
+		MoveToActor(PlayerTank, AcceptanceRadius);
 		//Aim towards Player
 		ControlledTank->AimAt(PlayerTank->GetActorLocation());
 		//ControlledTank->Fire();
