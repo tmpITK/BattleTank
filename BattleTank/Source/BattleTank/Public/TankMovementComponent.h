@@ -23,6 +23,13 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = Input)
 		void IntendMoveBackward(float Throw);
+
+	UFUNCTION(BlueprintCallable, Category = Input)
+		void IntendRotateClockwise(float Throw);
+
+	UFUNCTION(BlueprintCallable, Category = Input)
+		void IntendRotateAntiClockwise(float Throw);
+
 	UFUNCTION(BlueprintCallable, Category = Setup)
 		void Initialise(UTankTrack* LeftTrackToSet, UTankTrack* RightTrackToSet);
 
