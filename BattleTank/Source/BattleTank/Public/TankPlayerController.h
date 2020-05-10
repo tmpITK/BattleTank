@@ -23,6 +23,10 @@ class BATTLETANK_API ATankPlayerController : public APlayerController
 	friend class ControllerAux;	
 public:
 	virtual void BeginPlay() override;
+
+protected:
+	UFUNCTION(BlueprintCallable, Category = "Setup")
+		ATank* GetControlledTank() const;
 	
 private:
 	std::unique_ptr<ControllerAux> ControllerHelper = std::make_unique<ControllerAux>();
@@ -31,8 +35,6 @@ private:
 		float CrosshairXLocation = 0.5, CrosshairYLocation = 0.3333;
 	UPROPERTY(EditDefaultsOnly)
 		float LineTraceRange = 1000000; //10km in centimetres
-
-	ATank* GetControlledTank() const;
 
 	virtual void Tick(float DeltaTime) override;
 
