@@ -5,8 +5,6 @@
 void UTankTrack::SetThrottle(float NewThrottle)
 {
 
-	UE_LOG(LogTemp, Warning, TEXT("Throttle %f"), NewThrottle);
-
 	auto ForceApplied = GetForwardVector() * NewThrottle * TrackMaximumFocre;
 	auto ForceLocation = GetComponentLocation();
 	//Root does not have physics component, have to upcast
