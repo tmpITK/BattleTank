@@ -10,9 +10,11 @@
 UENUM()
 enum class EFiringState : uint8
 {
-	Reloading,
+	Placeholder,
 	Aiming,
-	Locked
+	Locked,
+	Reloading,
+	Nothing
 };
 class UTankBarrel;
 class UTankTurret;
@@ -31,7 +33,7 @@ public:
 		void Initialise(UTankBarrel* BarrelToSet, UTankTurret* TurretToSet);
 
 	UPROPERTY(BlueprintReadOnly, Category = "State")
-		EFiringState FiringState = EFiringState::Reloading;
+		EFiringState FiringState = EFiringState::Aiming;
 
 
 private:
