@@ -11,6 +11,7 @@
 #include "TankPlayerController.generated.h"
 
 class ATank;
+class UTankAimingComponent;
 
 /**
  * 
@@ -27,6 +28,9 @@ public:
 protected:
 	UFUNCTION(BlueprintCallable, Category = "Setup")
 		ATank* GetControlledTank() const;
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
+		void FoundAimingComponent(UTankAimingComponent* AimCompRef);
 	
 private:
 	std::unique_ptr<ControllerAux> ControllerHelper = std::make_unique<ControllerAux>();
