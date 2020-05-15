@@ -6,7 +6,7 @@
 void UTankMovementComponent::Initialise(UTankTrack* LeftTrackToSet, UTankTrack* RightTrackToSet)
 {
 
-	if (!ensure(LeftTrackToSet || RightTrackToSet)) { return; }
+	if (!LeftTrackToSet || !RightTrackToSet) { return; }
 	LeftTrack = LeftTrackToSet;
 	RightTrack = RightTrackToSet;
 
@@ -49,7 +49,7 @@ void UTankMovementComponent::IntendRotateClockwise(float Throw)
 
 void UTankMovementComponent::IntendRotateAntiClockwise(float Throw)
 {
-	if (!ensure(LeftTrack || RightTrack)) { return; }
+	if (!LeftTrack || !RightTrack) { return; }
 	LeftTrack->SetThrottle(-Throw);
 	RightTrack->SetThrottle(Throw);
 }

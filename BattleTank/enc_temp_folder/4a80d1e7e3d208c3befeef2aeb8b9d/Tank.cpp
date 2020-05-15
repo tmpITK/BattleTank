@@ -30,11 +30,10 @@ void ATank::AimAt(FVector HitLocation)
 
 void ATank::Fire()
 {
-	if (!ensure(Barrel)) { return; }
 	bool isReloaded = (FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds;
 	UE_LOG(LogTemp, Warning, TEXT("FIREEEE."));
 	
-	if (isReloaded) {
+	if (Barrel && isReloaded) {
 
 
 		// Spawn projectile
