@@ -34,11 +34,14 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Setup")
 		void Initialise(UTankBarrel* BarrelToSet, UTankTurret* TurretToSet);
 
-	UPROPERTY(BlueprintReadOnly, Category = "State")
-		EFiringState FiringState = EFiringState::Aiming;
-
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 		void Fire();
+
+
+protected:
+
+	UPROPERTY(BlueprintReadOnly, Category = "State")
+		EFiringState FiringState = EFiringState::Aiming;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 		float LaunchSpeed = 4000;
@@ -51,7 +54,6 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 		TSubclassOf<AProjectile> ProjectileBlueprint;
-
 private:
 	// Sets default values for this component's properties
 	UTankAimingComponent();	
