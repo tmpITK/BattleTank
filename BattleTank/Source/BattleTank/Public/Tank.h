@@ -8,7 +8,6 @@
 
 class UTankBarrel;
 class UTankTurret;
-class UTankAimingComponent;
 class AProjectile;
 
 UCLASS()
@@ -23,21 +22,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 		void Fire();
 
-	void AimAt(FVector HitLocation);
-
-
 protected:
-
-	UPROPERTY(BlueprintReadOnly)
-	UTankAimingComponent* TankAimingComponent = nullptr;
 
 private:	
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Firing")
-		float LaunchSpeed = 4000;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 		TSubclassOf<AProjectile> ProjectileBlueprint;
@@ -47,6 +37,9 @@ private:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 		double LastFireTime;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+		float LaunchSpeed = 4000;
 
 	// for projecctile spawning
 	UTankBarrel* Barrel = nullptr;
