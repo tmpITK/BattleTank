@@ -12,11 +12,9 @@ class AProjectile;
 UENUM()
 enum class EFiringState : uint8
 {
-	Placeholder,
 	Aiming,
 	Locked,
-	Reloading,
-	Nothing
+	Reloading
 };
 class UTankBarrel;
 class UTankTurret;
